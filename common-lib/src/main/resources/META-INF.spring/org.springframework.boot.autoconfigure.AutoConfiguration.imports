@@ -1,2 +1,2 @@
-errors.com.example.distribute_lovable_clone.common_lib.SharedExceptionAutoConfiguration
-security.com.example.distribute_lovable_clone.common_lib.SharedSecurityAutoConfiguration
+com.example.distribute_lovable_clone.common_lib.security.SharedSecurityAutoConfiguration
+com.example.distribute_lovable_clone.common_lib.errors.SharedExceptionAutoConfiguration
