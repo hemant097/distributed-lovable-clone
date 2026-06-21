@@ -1,4 +1,4 @@
-package com.example.distribute_lovable_clone.common_lib.errors;
+package com.example.distributelovableclone.commonlib.errors;
 
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Bean;

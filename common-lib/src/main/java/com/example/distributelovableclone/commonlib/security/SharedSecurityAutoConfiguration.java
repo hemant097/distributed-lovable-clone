@@ -1,4 +1,4 @@
-package com.example.distribute_lovable_clone.common_lib.security;
+package com.example.distributelovableclone.commonlib.security;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
@@ -15,7 +15,6 @@ public class SharedSecurityAutoConfiguration {
 
     @Bean
     public JwtAuthFilter jwtAuthFilter(AuthUtil authUtil,
-                                       @Qualifier("handlerExceptionResolver")
                                        HandlerExceptionResolver handlerExceptionResolver){
         return new JwtAuthFilter(authUtil,handlerExceptionResolver);
     }

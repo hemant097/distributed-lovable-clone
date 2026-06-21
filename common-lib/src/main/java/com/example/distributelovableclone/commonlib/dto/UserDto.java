@@ -1,4 +1,4 @@
-package com.example.distribute_lovable_clone.common_lib.dto;
+package com.example.distributelovableclone.commonlib.dto;
 
 public record UserDto(
         Long id,

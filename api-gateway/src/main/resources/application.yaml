@@ -1,0 +1,13 @@
+spring.application.name=api-gateway
+spring.config.import=configserver:http://localhost:8888
+spring.main.web-application-type=reactive
+spring.autoconfigure.exclude= com.example.distributelovableclone.commonlib.security.SharedSecurityAutoConfiguration
+spring.autoconfigure.exclude= org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+spring.autoconfigure.exclude= org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration
+
+logging.level.org.springframework.cloud.gateway=DEBUG
+logging.level.reactor.netty.http.client=DEBUG
+
+- com.example.projectName.commonlib.security.SharedSecurityAutoConfiguration
+- org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration
+- org.springframework.boot.autoconfigure.security.servlet.SecurityFilterAutoConfiguration

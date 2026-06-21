@@ -1,4 +1,4 @@
-package com.example.distribute_lovable_clone.common_lib.security;
+package com.example.distributelovableclone.commonlib.security;
 
 import io.jsonwebtoken.JwtException;
 import jakarta.servlet.FilterChain;

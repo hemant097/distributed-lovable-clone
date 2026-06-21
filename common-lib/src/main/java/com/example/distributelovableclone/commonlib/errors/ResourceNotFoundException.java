@@ -1,4 +1,4 @@
-package com.example.distribute_lovable_clone.common_lib.errors;
+package com.example.distributelovableclone.commonlib.errors;
 
 public class ResourceNotFoundException extends RuntimeException{
 

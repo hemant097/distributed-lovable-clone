@@ -1,6 +1,6 @@
-package com.example.distribute_lovable_clone.common_lib.security;
+package com.example.distributelovableclone.commonlib.security;
 
-import com.example.distribute_lovable_clone.common_lib.dto.UserDto;
+import com.example.distributelovableclone.commonlib.dto.UserDto;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
