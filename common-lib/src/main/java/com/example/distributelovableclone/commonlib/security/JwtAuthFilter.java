@@ -33,7 +33,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
             if(requestHeaderToken !=null && SecurityContextHolder.getContext().getAuthentication() == null){
                 JwtUserPrincipal user = authUtil.verifyAccessToken(requestHeaderToken); //here we've avoided an extra DB call, as for this case, JWT has enough user info
                 UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
-                        user, null,user.authorities());
+                        user, requestHeaderToken,user.authorities());
 
                 authenticationToken.setDetails(
                         new WebAuthenticationDetailsSource().buildDetails(request)
