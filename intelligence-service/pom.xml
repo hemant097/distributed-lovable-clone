@@ -81,12 +81,12 @@
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-        <!--        common-lib dependency, custom created-->
-        <dependency>
-            <groupId>com.example.distribute-lovable-clone</groupId>
-            <artifactId>common-lib</artifactId>
-            <version>1.0.0</version>
-        </dependency>
+		<!--        common-lib dependency, custom created-->
+		<dependency>
+			<groupId>com.example.distributelovableclone</groupId>
+			<artifactId>commonlib</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 
     </dependencies>
 	<dependencyManagement>
