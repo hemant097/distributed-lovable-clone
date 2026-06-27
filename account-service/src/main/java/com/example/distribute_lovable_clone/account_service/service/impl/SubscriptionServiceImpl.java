@@ -10,6 +10,7 @@ import com.example.distribute_lovable_clone.account_service.repository.PlanRepos
 import com.example.distribute_lovable_clone.account_service.repository.SubscriptionRepository;
 import com.example.distribute_lovable_clone.account_service.repository.UserRepository;
 import com.example.distribute_lovable_clone.account_service.service.SubscriptionService;
+import com.example.distributelovableclone.commonlib.dto.PlanDto;
 import com.example.distributelovableclone.commonlib.enums.SubscriptionStatus;
 import com.example.distributelovableclone.commonlib.errors.ResourceNotFoundException;
 import com.example.distributelovableclone.commonlib.security.AuthUtil;
@@ -173,6 +174,12 @@ public class SubscriptionServiceImpl implements SubscriptionService {
 
         //we can notify user via email later
 
+    }
+
+    @Override
+    public PlanDto getCurrentSubscribedPlanByUser() {
+        SubscriptionResponse subscriptionResponse = getCurrentSubscription();
+        return subscriptionResponse.plan();
     }
 
     /// Utility methods
