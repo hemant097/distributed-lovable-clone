@@ -104,8 +104,8 @@
 
         <!--        common-lib dependency, custom created-->
         <dependency>
-            <groupId>com.example.distribute-lovable-clone</groupId>
-            <artifactId>common-lib</artifactId>
+            <groupId>com.example.distributelovableclone</groupId>
+            <artifactId>commonlib</artifactId>
             <version>1.0.0</version>
         </dependency>
 

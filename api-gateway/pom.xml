@@ -54,13 +54,6 @@
 			<scope>test</scope>
 		</dependency>
 
-<!--        common-lib dependency, custom created-->
-        <dependency>
-            <groupId>com.example.distribute-lovable-clone</groupId>
-            <artifactId>common-lib</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-
 		<dependency>
 			<groupId>io.projectreactor</groupId>
 			<artifactId>reactor-test</artifactId>

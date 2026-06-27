@@ -2,7 +2,7 @@ package com.example.distribute_lovable_clone.account_service.repository;
 
 
 import com.example.distribute_lovable_clone.account_service.entity.Subscription;
-import com.example.distribute_lovable_clone.common_lib.enums.SubscriptionStatus;
+import com.example.distributelovableclone.commonlib.enums.SubscriptionStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

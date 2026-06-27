@@ -1,6 +1,6 @@
 package com.example.distribute_lovable_clone.account_service.entity;
 
-import com.example.distribute_lovable_clone.common_lib.enums.SubscriptionStatus;
+import com.example.distributelovableclone.commonlib.enums.SubscriptionStatus;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;

@@ -15,15 +15,4 @@ public class AccountServiceApplication {
 		SpringApplication.run(AccountServiceApplication.class, args);
 	}
 
-	@Bean
-    CommandLineRunner runner(Environment env) {
-		return args -> {
-			System.out.println("APP NAME = " +
-					env.getProperty("spring.application.name"));
-
-			System.out.println("DB URL = " +
-					env.getProperty("spring.datasource.url"));
-		};
-	}
-
 }
