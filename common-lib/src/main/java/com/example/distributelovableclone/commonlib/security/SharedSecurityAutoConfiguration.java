@@ -19,6 +19,7 @@ public class SharedSecurityAutoConfiguration {
 
     @Bean
     public JwtAuthFilter jwtAuthFilter(AuthUtil authUtil,
+                                       @Qualifier("handlerExceptionResolver")
                                        HandlerExceptionResolver handlerExceptionResolver){
         return new JwtAuthFilter(authUtil,handlerExceptionResolver);
     }

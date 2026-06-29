@@ -9,6 +9,7 @@ import java.util.List;
 
 public record JwtUserPrincipal(
         Long userId,
+        String name,
         String userName,
         String password,
         List<GrantedAuthority> authorities

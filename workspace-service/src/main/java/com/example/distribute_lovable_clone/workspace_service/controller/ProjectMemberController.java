@@ -1,10 +1,10 @@
 package com.example.distribute_lovable_clone.workspace_service.controller;
 
-import com.lovable.project.lovable_clone.dto.member.ApproveInviteRequest;
-import com.lovable.project.lovable_clone.dto.member.InviteMemberRequest;
-import com.lovable.project.lovable_clone.dto.member.MemberResponse;
-import com.lovable.project.lovable_clone.dto.member.UpdateMemberRoleRequest;
-import com.lovable.project.lovable_clone.service.ProjectMemberService;
+import com.example.distribute_lovable_clone.workspace_service.dto.member.ApproveInviteRequest;
+import com.example.distribute_lovable_clone.workspace_service.dto.member.InviteMemberRequest;
+import com.example.distribute_lovable_clone.workspace_service.dto.member.MemberResponse;
+import com.example.distribute_lovable_clone.workspace_service.dto.member.UpdateMemberRoleRequest;
+import com.example.distribute_lovable_clone.workspace_service.service.ProjectMemberService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

@@ -9,6 +9,7 @@ import com.example.distribute_lovable_clone.account_service.repository.UserRepos
 import com.example.distribute_lovable_clone.account_service.service.AuthService;
 import com.example.distributelovableclone.commonlib.errors.BadRequestException;
 import com.example.distributelovableclone.commonlib.security.AuthUtil;
+import com.example.distributelovableclone.commonlib.security.JwtUserPrincipal;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -17,6 +18,8 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -40,9 +43,11 @@ public class AuthServiceImpl implements AuthService {
         user.setPassword(passwordEncoder.encode(request.password()));
         user = userRepo.save(user);
 
-        String token = authUtil.generateAccessToken(userMapper.toUserDto(user));
+        JwtUserPrincipal jwtUserPrincipal = new JwtUserPrincipal(user.getId(),user.getName(),
+                user.getUsername(),null, List.of());
+        String token = authUtil.generateAccessToken(jwtUserPrincipal);
 
-        return new AuthResponse(token, userMapper.toUserProfileResponse(user));
+        return new AuthResponse(token, userMapper.toUserProfileResponse(jwtUserPrincipal));
     }
 
     @Override
@@ -51,9 +56,8 @@ public class AuthServiceImpl implements AuthService {
                 new UsernamePasswordAuthenticationToken(loginRequest.username(), loginRequest.password())
         );
 
-        User user = (User) authentication.getPrincipal();
-
-        String token = authUtil.generateAccessToken(userMapper.toUserDto(user));
+        JwtUserPrincipal user = (JwtUserPrincipal) authentication.getPrincipal();
+        String token = authUtil.generateAccessToken(user);
 
         return new AuthResponse(token, userMapper.toUserProfileResponse(user));
 

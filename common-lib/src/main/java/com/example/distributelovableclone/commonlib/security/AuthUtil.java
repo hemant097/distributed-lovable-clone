@@ -1,6 +1,5 @@
 package com.example.distributelovableclone.commonlib.security;
 
-import com.example.distributelovableclone.commonlib.dto.UserDto;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
@@ -28,10 +27,11 @@ public class AuthUtil {
         return Keys.hmacShaKeyFor(jwtSecretKey.getBytes(StandardCharsets.UTF_8));
     }
 
-    public String generateAccessToken(UserDto user) {
+    public String generateAccessToken(JwtUserPrincipal user) {
         return Jwts.builder()
-                .subject(user.username())
-                .claim("userId", user.id().toString())
+                .subject(user.userName())
+                .claim("userId", user.userId().toString())
+                .claim("name",user.name())
 //                .claim() will be added for roles later
                 .issuedAt(new Date())
                 .expiration(new Date(System.currentTimeMillis() + (oneMinute*100)))
@@ -50,20 +50,22 @@ public class AuthUtil {
                 .getPayload();
 
         Long userId = Long.parseLong(claims.get("userId",String.class));
+        String name = claims.get("name",String.class);
         String username = claims.getSubject();
 
-        return new JwtUserPrincipal(userId, username,null, List.of());
+        return new JwtUserPrincipal(userId, name,username, null,List.of());
     }
 
     public Long getCurrentUserId(){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-        if(authentication!=null && authentication.getPrincipal() instanceof JwtUserPrincipal userPrincipal){
+        if(authentication==null || !(authentication.getPrincipal() instanceof JwtUserPrincipal userPrincipal))
+            throw new AuthenticationCredentialsNotFoundException("No JWT found");
+        else{
             log.info("current user logged in is : {} ",userPrincipal.userName());
             return userPrincipal.userId();
         }
-        else
-            throw new AuthenticationCredentialsNotFoundException("No JWT found");
+
 
     }
 }
