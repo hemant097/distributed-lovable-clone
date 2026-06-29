@@ -1,14 +1,14 @@
 package com.example.distribute_lovable_clone.workspace_service.service.impl;
 
 import com.example.distribute_lovable_clone.workspace_service.dto.project.FileContentResponse;
-import com.example.distribute_lovable_clone.workspace_service.dto.project.FileNode;
-import com.example.distribute_lovable_clone.workspace_service.dto.project.FileTreeResponse;
 import com.example.distribute_lovable_clone.workspace_service.entity.Project;
 import com.example.distribute_lovable_clone.workspace_service.entity.ProjectFile;
 import com.example.distribute_lovable_clone.workspace_service.mapper.ProjectFileMapper;
 import com.example.distribute_lovable_clone.workspace_service.repository.ProjectFileRepository;
 import com.example.distribute_lovable_clone.workspace_service.repository.ProjectRepository;
 import com.example.distribute_lovable_clone.workspace_service.service.ProjectFileService;
+import com.example.distributelovableclone.commonlib.dto.FileNode;
+import com.example.distributelovableclone.commonlib.dto.FileTreeResponse;
 import com.example.distributelovableclone.commonlib.errors.ResourceNotFoundException;
 import io.minio.GetObjectArgs;
 import io.minio.MinioClient;
@@ -46,7 +46,7 @@ public class ProjectFileServiceImpl implements ProjectFileService {
     }
 
     @Override
-    public FileContentResponse getFileContent(Long projectId, String filePath) {
+    public String getFileContent(Long projectId, String filePath) {
         String objectKey = "project-"+projectId + "/" + filePath;
         log.info("Trying to get file content from minio at {}",objectKey);
         try (
@@ -56,8 +56,7 @@ public class ProjectFileServiceImpl implements ProjectFileService {
                                 .object(objectKey )
                                 .build())) {
 
-            String content = new String(is.readAllBytes(), StandardCharsets.UTF_8);
-            return new FileContentResponse(filePath, content);
+            return new String(is.readAllBytes(), StandardCharsets.UTF_8);
         } catch (Exception e) {
             log.error("Failed to read file: {}/{}", projectId, filePath, e);
             throw new RuntimeException("Failed to read file content", e);

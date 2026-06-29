@@ -1,4 +1,4 @@
-package com.example.distribute_lovable_clone.workspace_service.dto.project;
+package com.example.distributelovableclone.commonlib.dto;
 
 import java.util.List;
 
