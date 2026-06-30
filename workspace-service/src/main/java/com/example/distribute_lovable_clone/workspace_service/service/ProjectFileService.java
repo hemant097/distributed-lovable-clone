@@ -1,7 +1,6 @@
 package com.example.distribute_lovable_clone.workspace_service.service;
 
 
-import com.example.distribute_lovable_clone.workspace_service.dto.project.FileContentResponse;
 import com.example.distributelovableclone.commonlib.dto.FileTreeResponse;
 
 public interface ProjectFileService {

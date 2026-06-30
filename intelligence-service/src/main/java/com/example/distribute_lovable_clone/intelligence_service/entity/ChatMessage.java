@@ -21,9 +21,9 @@ public class ChatMessage {
     Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumns({ //as chatSession has a composite id, thus JoinColumn to both
-            @JoinColumn(name = "project_id", referencedColumnName = "project_id",nullable = false),
-            @JoinColumn(name = "user_id",referencedColumnName = "user_id",nullable = false)
+    @JoinColumns({
+            @JoinColumn(name = "project_id", referencedColumnName = "projectId",nullable = false),
+            @JoinColumn(name = "user_id",referencedColumnName = "userId",nullable = false)
     })
     ChatSession chatSession;
 

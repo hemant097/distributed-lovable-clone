@@ -1,5 +1,6 @@
 package com.example.distribute_lovable_clone.intelligence_service.service.impl;
 
+import com.example.distribute_lovable_clone.intelligence_service.client.WorkspaceClient;
 import com.example.distribute_lovable_clone.intelligence_service.dto.chat.StreamResponse;
 import com.example.distribute_lovable_clone.intelligence_service.entity.ChatEvent;
 import com.example.distribute_lovable_clone.intelligence_service.entity.ChatMessage;
@@ -46,6 +47,7 @@ public class AiGenerationServiceImpl implements AiGenerationService {
     private final ChatEventRepository chatEventRepo;
     private final LlmResponseParser llmResponseParser;
     private final UsageService usageService;
+    private final WorkspaceClient workspaceClient;
 
     /**Explanation:
      For using \ before " -> \" is escaped double quote. If we want real " inside string we need to put \" or for \ we need \\
@@ -108,7 +110,7 @@ public class AiGenerationServiceImpl implements AiGenerationService {
         );
 
         StringBuilder fullResponseBuffer = new StringBuilder();
-        CodeGenerationTool codeGenerationTools = new CodeGenerationTool(projectId);
+        CodeGenerationTool codeGenerationTools = new CodeGenerationTool(projectId,workspaceClient);
 
         AtomicReference<Long> startTime = new AtomicReference<>(System.currentTimeMillis());
         AtomicReference<Long> endTime = new AtomicReference<>(0L);
@@ -221,7 +223,7 @@ public class AiGenerationServiceImpl implements AiGenerationService {
             String filePath = matcher.group(1);
             String fileContent = matcher.group(2);
 
-            projectFileService.saveFile(projectId, filePath, fileContent);
+//            projectFileService.saveFile(projectId, filePath, fileContent);
         }
         log.info("All files parsed and saved for projectId:{}",projectId);
     }

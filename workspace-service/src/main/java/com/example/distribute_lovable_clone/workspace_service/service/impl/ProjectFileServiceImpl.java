@@ -1,6 +1,5 @@
 package com.example.distribute_lovable_clone.workspace_service.service.impl;
 
-import com.example.distribute_lovable_clone.workspace_service.dto.project.FileContentResponse;
 import com.example.distribute_lovable_clone.workspace_service.entity.Project;
 import com.example.distribute_lovable_clone.workspace_service.entity.ProjectFile;
 import com.example.distribute_lovable_clone.workspace_service.mapper.ProjectFileMapper;

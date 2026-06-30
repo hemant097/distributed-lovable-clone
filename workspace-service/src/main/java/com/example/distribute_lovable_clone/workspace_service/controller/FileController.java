@@ -1,7 +1,6 @@
 package com.example.distribute_lovable_clone.workspace_service.controller;
 
 
-import com.example.distribute_lovable_clone.workspace_service.dto.project.FileContentResponse;
 import com.example.distribute_lovable_clone.workspace_service.service.ProjectFileService;
 import com.example.distributelovableclone.commonlib.dto.FileTreeResponse;
 import lombok.RequiredArgsConstructor;
