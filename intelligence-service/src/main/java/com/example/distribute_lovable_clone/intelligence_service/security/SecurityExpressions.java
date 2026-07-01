@@ -1,8 +1,7 @@
-package com.example.distribute_lovable_clone.workspace_service.security;
+package com.example.distribute_lovable_clone.intelligence_service.security;
 
-import com.example.distribute_lovable_clone.workspace_service.repository.ProjectMemberRepository;
+import com.example.distribute_lovable_clone.intelligence_service.client.WorkspaceClient;
 import com.example.distributelovableclone.commonlib.enums.ProjectPermission;
-import com.example.distributelovableclone.commonlib.security.AuthUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -11,19 +10,10 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 @Slf4j
 public class SecurityExpressions {
-    private final ProjectMemberRepository projectMemberRepo;
-    private final AuthUtil authUtil;
+    private final WorkspaceClient workspaceClient;
 
-    public boolean hasPermission(Long projectId, ProjectPermission permission){
-        Long userId = authUtil.getCurrentUserId();
-
-        return projectMemberRepo.getProjectRoleByProjectIdAndUserId(projectId, userId)
-                .map( role -> {
-                    log.info("User id: {}, with project id:{}, has role:{}, with permissions, {}",userId,projectId,role,role.getPermissions());
-                    return role.getPermissions() //returns a set of permissions
-                            .contains(permission);
-                })
-                .orElse(false);
+    private boolean hasPermission(Long projectId, ProjectPermission permission){
+        return workspaceClient.checkPermission(projectId, permission);
     }
 
     public boolean canViewTheProject(Long projectId){

@@ -24,7 +24,7 @@ public class SharedSecurityAutoConfiguration {
         return new JwtAuthFilter(authUtil,handlerExceptionResolver);
     }
 
-    //passing the jwt token to the downstream service, so that it can verify jwt itself
+    //passing the jwt token to the downstream service, so that it can verify jwt itself (eg. when a feignClient is used to call another service)
     @Bean
     public RequestInterceptor requestInterceptor(){
         return new RequestInterceptor() {

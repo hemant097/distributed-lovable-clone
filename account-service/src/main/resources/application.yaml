@@ -4,8 +4,8 @@ spring:
   config:
     import: "configserver:http://localhost:8888"
 
-logging:
-  level:
-    org.springframework.boot.autoconfigure: DEBUG
-    org.springframework.core.env: TRACE
-    org.springframework.security: DEBUG
+#logging:
+#  level:
+#    org.springframework.boot.autoconfigure: DEBUG
+#    org.springframework.core.env: TRACE
+#    org.springframework.security: DEBUG

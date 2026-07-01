@@ -1,28 +1,23 @@
-package com.example.distribute_lovable_clone.workspace_service.security;
+package com.example.distribute_lovable_clone.intelligence_service.security;
 
 import com.example.distributelovableclone.commonlib.security.JwtAuthFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.Customizer;
-import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 
 @Configuration
 @RequiredArgsConstructor
-@EnableWebSecurity
 @EnableMethodSecurity(securedEnabled = true)
-public class WorkspaceSecurityConfig {
-
+@EnableWebSecurity
+public class IntelligenceSecurityConfig {
     private final JwtAuthFilter jwtAuthFilter;
     private final HandlerExceptionResolver handlerExceptionResolver;
 
@@ -46,6 +41,4 @@ public class WorkspaceSecurityConfig {
 
         return httpSecurity.build();
     }
-
-
 }

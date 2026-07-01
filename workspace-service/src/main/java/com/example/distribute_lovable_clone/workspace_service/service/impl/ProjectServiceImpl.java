@@ -10,9 +10,11 @@ import com.example.distribute_lovable_clone.workspace_service.entity.ProjectMemb
 import com.example.distribute_lovable_clone.workspace_service.mapper.ProjectMapper;
 import com.example.distribute_lovable_clone.workspace_service.repository.ProjectMemberRepository;
 import com.example.distribute_lovable_clone.workspace_service.repository.ProjectRepository;
+import com.example.distribute_lovable_clone.workspace_service.security.SecurityExpressions;
 import com.example.distribute_lovable_clone.workspace_service.service.ProjectService;
 import com.example.distribute_lovable_clone.workspace_service.service.ProjectTemplateService;
 import com.example.distributelovableclone.commonlib.dto.PlanDto;
+import com.example.distributelovableclone.commonlib.enums.ProjectPermission;
 import com.example.distributelovableclone.commonlib.enums.ProjectRole;
 import com.example.distributelovableclone.commonlib.errors.BadRequestException;
 import com.example.distributelovableclone.commonlib.errors.ResourceNotFoundException;
@@ -41,6 +43,7 @@ public class ProjectServiceImpl implements ProjectService {
     AuthUtil authUtil;
     ProjectTemplateService projectTemplateService;
     AccountClient accountClient;
+    SecurityExpressions securityExpressions;
 
     @Override
     public List<ProjectSummaryResponse> getUserProjects() {
@@ -137,6 +140,11 @@ public class ProjectServiceImpl implements ProjectService {
         projectRepo.save(project);
 
 
+    }
+
+    @Override
+    public boolean hasPermission(Long projectId, ProjectPermission permission) {
+        return securityExpressions.hasPermission(projectId,permission);
     }
 
     //Internal functions
