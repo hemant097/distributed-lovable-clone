@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: intelligence-service
+  config:
+    import: "configserver:http://localhost:8888"
+  ai:
+    openai:
+      api-key: ${OPENROUTER_API_KEY}
+      chat:
+        base-url: https://openrouter.ai/api/v1
+        model: cohere/north-mini-code:free
+        temperature: 0.0
+#     google:
+#       genai:
+#         api-key: ${MY_GOOGLE_AI_API_KEY}
+#         embedding:
+#           api-key: ${MY_GOOGLE_AI_API_KEY}
+#           text:
+#             model: gemini-embedding-001
+#             dimensions: 1980
+#         chat:
+#           model: gemini-3.5-flash
+##           model: gemini-3.1-flash-lite
+#           temperature: 0.0
+
+logging:
+  level:
+    org.springframework.ai.chat.client: DEBUG

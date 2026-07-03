@@ -96,7 +96,7 @@ public class AiGenerationServiceImpl implements AiGenerationService {
 
     @Override
     @PreAuthorize("@security.canEditTheProject(#projectId)")
-    public Flux<StreamResponse> streamResponse(String userMessage, Long projectId) {
+    public Flux<StreamResponse> streamResponse(String userMessage, Long projectId,String authorizationHeader) {
 
 //        usageService.checkDailyTokensUsage();
 
@@ -107,6 +107,7 @@ public class AiGenerationServiceImpl implements AiGenerationService {
         Map<String,Object> advisorParams = Map.of(
                 "userId",userId,
                 "projectId",projectId
+                , "authorizationHeader",authorizationHeader
         );
 
         StringBuilder fullResponseBuffer = new StringBuilder();
@@ -120,6 +121,7 @@ public class AiGenerationServiceImpl implements AiGenerationService {
                 .system(PromptUtil.CODE_GENERATION_SYSTEM_PROMPT)
                 .user(userMessage)
                 .tools(codeGenerationTools) //tool to request the required file and it's content
+                .toolContext(Map.of("authorizationHeader",authorizationHeader)) // for using authHeader in Tool
                 .advisors( advisorSpec -> {
                     advisorSpec.params(advisorParams);
                     advisorSpec.advisors(fileTreeContextAdvisor); //advisor to go through the file tree

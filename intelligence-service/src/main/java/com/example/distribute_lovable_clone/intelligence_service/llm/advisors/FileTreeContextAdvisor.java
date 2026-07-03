@@ -31,14 +31,15 @@ public class FileTreeContextAdvisor implements StreamAdvisor {
     public Flux<ChatClientResponse> adviseStream(ChatClientRequest chatClientRequest, StreamAdvisorChain streamAdvisorChain) {
         Map<String,Object> context = chatClientRequest.context();
         Long projectId = Long.parseLong(context.getOrDefault("projectId",0).toString());
+        String authHeader = context.getOrDefault("authorizationHeader","").toString();
 
-        ChatClientRequest augmentedChatClientRequest = augmentRequestWithFileTree(chatClientRequest, projectId);
+        ChatClientRequest augmentedChatClientRequest = augmentRequestWithFileTree(chatClientRequest, projectId,authHeader);
         return streamAdvisorChain.nextStream(augmentedChatClientRequest);
     }
 
     //mutating the request to append file tree at the end, else it adds it at the beginning. This way we're saving
     //some token cost, trying to use AI caching
-    ChatClientRequest augmentRequestWithFileTree(ChatClientRequest chatClientRequest, Long projectId){
+    ChatClientRequest augmentRequestWithFileTree(ChatClientRequest chatClientRequest, Long projectId,String authHeader){
 
         List<Message> incomingMessages = chatClientRequest.prompt().getInstructions();
 
@@ -57,7 +58,7 @@ public class FileTreeContextAdvisor implements StreamAdvisor {
         if(systemMessage!=null)
             allMessages.add(systemMessage);
 
-        List<FileNode> fileTree = workspaceClient.getFileTree(projectId).files();
+        List<FileNode> fileTree = workspaceClient.getFileTree(projectId,authHeader).files();
         String fileTreeContext  = "\n\n ---- You can use this FILE_TREE to choose which files to read from ----\n"+fileTree.toString();
 
 
