@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface WorkspaceClient {
 
     @GetMapping("/internal/v1/projects/{projectId}/files/tree")
-    FileTreeResponse getFileTree(@PathVariable Long projectId
-                            ,@RequestHeader("Authorization") String authorizationHeader
+    FileTreeResponse getFileTree(@PathVariable Long projectId,
+                                 @RequestHeader("Authorization") String authorizationHeader
     );
 
     @GetMapping("/internal/v1/projects/{projectId}/files/content")
     String getFileContent(@PathVariable Long projectId,
-                   @RequestParam(name = "path") String filePath
-            , @RequestHeader("Authorization") String authorizationHeader
+                          @RequestParam(name = "path") String filePath,
+                          @RequestHeader("Authorization") String authorizationHeader
     );
 
     @GetMapping("/internal/v1/projects/{projectId}/permissions/check")
