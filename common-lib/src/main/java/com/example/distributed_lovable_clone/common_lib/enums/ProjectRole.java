@@ -1,11 +1,11 @@
-package com.example.distributed_lovable_clone.commonlib.enums;
+package com.example.distributed_lovable_clone.common_lib.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 import java.util.Set;
 
-import static com.example.distributed_lovable_clone.commonlib.enums.ProjectPermission.*;
+import static com.example.distributed_lovable_clone.common_lib.enums.ProjectPermission.*;
 
 
 @RequiredArgsConstructor

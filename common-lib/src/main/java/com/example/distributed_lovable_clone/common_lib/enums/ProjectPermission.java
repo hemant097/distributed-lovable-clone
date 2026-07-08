@@ -1,4 +1,4 @@
-package com.example.distributed_lovable_clone.commonlib.enums;
+package com.example.distributed_lovable_clone.common_lib.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

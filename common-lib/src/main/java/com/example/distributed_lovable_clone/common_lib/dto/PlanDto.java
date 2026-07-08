@@ -1,4 +1,4 @@
-package com.example.distributed_lovable_clone.commonlib.dto;
+package com.example.distributed_lovable_clone.common_lib.dto;
 
 public record PlanDto(
         Long id,

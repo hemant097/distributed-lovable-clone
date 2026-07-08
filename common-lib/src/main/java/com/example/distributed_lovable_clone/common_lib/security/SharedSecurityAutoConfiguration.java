@@ -1,4 +1,4 @@
-package com.example.distributed_lovable_clone.commonlib.security;
+package com.example.distributed_lovable_clone.common_lib.security;
 
 import feign.RequestInterceptor;
 import feign.RequestTemplate;

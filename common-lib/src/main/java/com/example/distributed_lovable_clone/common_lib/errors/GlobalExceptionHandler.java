@@ -1,4 +1,4 @@
-package com.example.distributed_lovable_clone.commonlib.errors;
+package com.example.distributed_lovable_clone.common_lib.errors;
 
 import io.jsonwebtoken.JwtException;
 import lombok.extern.slf4j.Slf4j;
