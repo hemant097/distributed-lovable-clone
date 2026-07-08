@@ -105,10 +105,16 @@
 			<artifactId>spring-boot-starter-webmvc-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<!--			Kafka-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-kafka</artifactId>
+		</dependency>
+
 		<!--        common-lib dependency, custom created-->
 		<dependency>
-			<groupId>com.example.distributelovableclone</groupId>
-			<artifactId>commonlib</artifactId>
+			<groupId>com.example.distributed_lovable_clone</groupId>
+			<artifactId>common-lib</artifactId>
 			<version>1.0.0</version>
 		</dependency>
 

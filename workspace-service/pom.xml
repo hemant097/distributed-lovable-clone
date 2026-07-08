@@ -103,11 +103,10 @@
 
 		<!--        common-lib dependency, custom created-->
 		<dependency>
-			<groupId>com.example.distributelovableclone</groupId>
-			<artifactId>commonlib</artifactId>
+			<groupId>com.example.distributed_lovable_clone</groupId>
+			<artifactId>common-lib</artifactId>
 			<version>1.0.0</version>
 		</dependency>
-
 
 		<!--        MinIO dependency-->
 		<dependency>
@@ -153,6 +152,12 @@
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok-mapstruct-binding</artifactId>
 			<version>${lombok-mapstruct-binding.version}</version>
+		</dependency>
+
+		<!--			Kafka-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-kafka</artifactId>
 		</dependency>
 
     </dependencies>
