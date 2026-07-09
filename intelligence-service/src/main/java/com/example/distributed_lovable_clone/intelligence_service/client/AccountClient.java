@@ -1,7 +1,7 @@
 package com.example.distributed_lovable_clone.intelligence_service.client;
 
-import com.example.distributed_lovable_clone.commonlib.dto.PlanDto;
-import com.example.distributed_lovable_clone.commonlib.dto.UserDto;
+import com.example.distributed_lovable_clone.common_lib.dto.PlanDto;
+import com.example.distributed_lovable_clone.common_lib.dto.UserDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

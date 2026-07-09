@@ -6,9 +6,9 @@ import com.example.distributed_lovable_clone.workspace_service.mapper.ProjectFil
 import com.example.distributed_lovable_clone.workspace_service.repository.ProjectFileRepository;
 import com.example.distributed_lovable_clone.workspace_service.repository.ProjectRepository;
 import com.example.distributed_lovable_clone.workspace_service.service.ProjectFileService;
-import com.example.distributed_lovable_clone.commonlib.dto.FileNode;
-import com.example.distributed_lovable_clone.commonlib.dto.FileTreeResponse;
-import com.example.distributed_lovable_clone.commonlib.errors.ResourceNotFoundException;
+import com.example.distributed_lovable_clone.common_lib.dto.FileNode;
+import com.example.distributed_lovable_clone.common_lib.dto.FileTreeResponse;
+import com.example.distributed_lovable_clone.common_lib.errors.ResourceNotFoundException;
 import io.minio.GetObjectArgs;
 import io.minio.MinioClient;
 import io.minio.PutObjectArgs;

@@ -6,7 +6,7 @@ import com.example.distributed_lovable_clone.workspace_service.entity.ProjectFil
 import com.example.distributed_lovable_clone.workspace_service.repository.ProjectFileRepository;
 import com.example.distributed_lovable_clone.workspace_service.repository.ProjectRepository;
 import com.example.distributed_lovable_clone.workspace_service.service.ProjectTemplateService;
-import com.example.distributed_lovable_clone.commonlib.errors.ResourceNotFoundException;
+import com.example.distributed_lovable_clone.common_lib.errors.ResourceNotFoundException;
 import io.minio.*;
 import io.minio.messages.Item;
 import lombok.RequiredArgsConstructor;

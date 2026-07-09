@@ -1,7 +1,7 @@
 package com.example.distributed_lovable_clone.workspace_service.service;
 
 
-import com.example.distributed_lovable_clone.commonlib.dto.FileTreeResponse;
+import com.example.distributed_lovable_clone.common_lib.dto.FileTreeResponse;
 
 public interface ProjectFileService {
      FileTreeResponse getFileTree(Long projectId);

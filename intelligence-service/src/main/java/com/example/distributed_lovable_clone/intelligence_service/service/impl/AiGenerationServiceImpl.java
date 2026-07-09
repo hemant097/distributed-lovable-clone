@@ -15,9 +15,9 @@ import com.example.distributed_lovable_clone.intelligence_service.repository.Cha
 import com.example.distributed_lovable_clone.intelligence_service.repository.ChatSessionRepository;
 import com.example.distributed_lovable_clone.intelligence_service.service.AiGenerationService;
 import com.example.distributed_lovable_clone.intelligence_service.service.UsageService;
-import com.example.distributed_lovable_clone.commonlib.enums.ChatEventType;
-import com.example.distributed_lovable_clone.commonlib.enums.MessageRole;
-import com.example.distributed_lovable_clone.commonlib.security.AuthUtil;
+import com.example.distributed_lovable_clone.common_lib.enums.ChatEventType;
+import com.example.distributed_lovable_clone.common_lib.enums.MessageRole;
+import com.example.distributed_lovable_clone.common_lib.security.AuthUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;

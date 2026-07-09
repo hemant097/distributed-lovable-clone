@@ -3,7 +3,7 @@ package com.example.distributed_lovable_clone.workspace_service.service.impl;
 import com.example.distributed_lovable_clone.workspace_service.dto.project.DeployResponse;
 import com.example.distributed_lovable_clone.workspace_service.repository.ProjectRepository;
 import com.example.distributed_lovable_clone.workspace_service.service.DeploymentService;
-import com.example.distributed_lovable_clone.commonlib.errors.ResourceNotFoundException;
+import com.example.distributed_lovable_clone.common_lib.errors.ResourceNotFoundException;
 import io.fabric8.kubernetes.api.model.Pod;
 import io.fabric8.kubernetes.client.KubernetesClient;
 import io.fabric8.kubernetes.client.dsl.ExecListener;

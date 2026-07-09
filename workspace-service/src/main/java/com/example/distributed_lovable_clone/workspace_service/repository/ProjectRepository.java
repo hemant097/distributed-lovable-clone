@@ -1,7 +1,7 @@
 package com.example.distributed_lovable_clone.workspace_service.repository;
 
 import com.example.distributed_lovable_clone.workspace_service.entity.Project;
-import com.example.distributed_lovable_clone.commonlib.enums.ProjectRole;
+import com.example.distributed_lovable_clone.common_lib.enums.ProjectRole;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

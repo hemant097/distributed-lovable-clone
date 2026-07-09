@@ -1,6 +1,6 @@
 package com.example.distributed_lovable_clone.account_service.dto.subscription;
 
-import com.example.distributed_lovable_clone.commonlib.dto.PlanDto;
+import com.example.distributed_lovable_clone.common_lib.dto.PlanDto;
 
 import java.time.Instant;
 

@@ -1,8 +1,8 @@
 package com.example.distributed_lovable_clone.workspace_service.security;
 
 import com.example.distributed_lovable_clone.workspace_service.repository.ProjectMemberRepository;
-import com.example.distributed_lovable_clone.commonlib.enums.ProjectPermission;
-import com.example.distributed_lovable_clone.commonlib.security.AuthUtil;
+import com.example.distributed_lovable_clone.common_lib.enums.ProjectPermission;
+import com.example.distributed_lovable_clone.common_lib.security.AuthUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

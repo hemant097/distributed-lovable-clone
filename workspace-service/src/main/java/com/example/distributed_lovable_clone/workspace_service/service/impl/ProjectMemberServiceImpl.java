@@ -12,9 +12,9 @@ import com.example.distributed_lovable_clone.workspace_service.mapper.ProjectMem
 import com.example.distributed_lovable_clone.workspace_service.repository.ProjectMemberRepository;
 import com.example.distributed_lovable_clone.workspace_service.repository.ProjectRepository;
 import com.example.distributed_lovable_clone.workspace_service.service.ProjectMemberService;
-import com.example.distributed_lovable_clone.commonlib.dto.UserDto;
-import com.example.distributed_lovable_clone.commonlib.errors.ResourceNotFoundException;
-import com.example.distributed_lovable_clone.commonlib.security.AuthUtil;
+import com.example.distributed_lovable_clone.common_lib.dto.UserDto;
+import com.example.distributed_lovable_clone.common_lib.errors.ResourceNotFoundException;
+import com.example.distributed_lovable_clone.common_lib.security.AuthUtil;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;

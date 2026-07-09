@@ -4,8 +4,8 @@ import com.example.distributed_lovable_clone.intelligence_service.client.Account
 import com.example.distributed_lovable_clone.intelligence_service.entity.UsageLog;
 import com.example.distributed_lovable_clone.intelligence_service.repository.UsageLogRepository;
 import com.example.distributed_lovable_clone.intelligence_service.service.UsageService;
-import com.example.distributed_lovable_clone.commonlib.dto.PlanDto;
-import com.example.distributed_lovable_clone.commonlib.security.AuthUtil;
+import com.example.distributed_lovable_clone.common_lib.dto.PlanDto;
+import com.example.distributed_lovable_clone.common_lib.security.AuthUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

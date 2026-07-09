@@ -1,7 +1,7 @@
 package com.example.distributed_lovable_clone.workspace_service.entity;
 
 
-import com.example.distributed_lovable_clone.commonlib.enums.ProjectRole;
+import com.example.distributed_lovable_clone.common_lib.enums.ProjectRole;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;

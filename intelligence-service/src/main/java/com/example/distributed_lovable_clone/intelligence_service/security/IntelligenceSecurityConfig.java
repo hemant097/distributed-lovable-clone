@@ -1,6 +1,6 @@
 package com.example.distributed_lovable_clone.intelligence_service.security;
 
-import com.example.distributed_lovable_clone.commonlib.security.JwtAuthFilter;
+import com.example.distributed_lovable_clone.common_lib.security.JwtAuthFilter;
 import jakarta.servlet.DispatcherType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;

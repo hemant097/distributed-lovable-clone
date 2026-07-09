@@ -2,8 +2,8 @@ package com.example.distributed_lovable_clone.account_service.service.impl;
 
 import com.example.distributed_lovable_clone.account_service.entity.User;
 import com.example.distributed_lovable_clone.account_service.repository.UserRepository;
-import com.example.distributed_lovable_clone.commonlib.errors.ResourceNotFoundException;
-import com.example.distributed_lovable_clone.commonlib.security.JwtUserPrincipal;
+import com.example.distributed_lovable_clone.common_lib.errors.ResourceNotFoundException;
+import com.example.distributed_lovable_clone.common_lib.security.JwtUserPrincipal;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

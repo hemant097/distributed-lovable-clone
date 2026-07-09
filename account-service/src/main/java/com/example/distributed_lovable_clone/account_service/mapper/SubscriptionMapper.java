@@ -3,7 +3,7 @@ package com.example.distributed_lovable_clone.account_service.mapper;
 import com.example.distributed_lovable_clone.account_service.dto.subscription.SubscriptionResponse;
 import com.example.distributed_lovable_clone.account_service.entity.Plan;
 import com.example.distributed_lovable_clone.account_service.entity.Subscription;
-import com.example.distributed_lovable_clone.commonlib.dto.PlanDto;
+import com.example.distributed_lovable_clone.common_lib.dto.PlanDto;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

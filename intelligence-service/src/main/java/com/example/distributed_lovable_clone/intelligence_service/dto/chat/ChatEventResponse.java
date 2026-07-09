@@ -1,7 +1,7 @@
 package com.example.distributed_lovable_clone.intelligence_service.dto.chat;
 
 
-import com.example.distributed_lovable_clone.commonlib.enums.ChatEventType;
+import com.example.distributed_lovable_clone.common_lib.enums.ChatEventType;
 
 public record ChatEventResponse(
         Long id,

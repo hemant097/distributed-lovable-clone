@@ -2,8 +2,8 @@ package com.example.distributed_lovable_clone.workspace_service.controller;
 
 import com.example.distributed_lovable_clone.workspace_service.service.ProjectFileService;
 import com.example.distributed_lovable_clone.workspace_service.service.ProjectService;
-import com.example.distributed_lovable_clone.commonlib.dto.FileTreeResponse;
-import com.example.distributed_lovable_clone.commonlib.enums.ProjectPermission;
+import com.example.distributed_lovable_clone.common_lib.dto.FileTreeResponse;
+import com.example.distributed_lovable_clone.common_lib.enums.ProjectPermission;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

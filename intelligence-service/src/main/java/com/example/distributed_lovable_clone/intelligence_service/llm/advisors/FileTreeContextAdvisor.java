@@ -1,7 +1,7 @@
 package com.example.distributed_lovable_clone.intelligence_service.llm.advisors;
 
 import com.example.distributed_lovable_clone.intelligence_service.client.WorkspaceClient;
-import com.example.distributed_lovable_clone.commonlib.dto.FileNode;
+import com.example.distributed_lovable_clone.common_lib.dto.FileNode;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClientRequest;

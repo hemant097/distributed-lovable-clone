@@ -3,9 +3,9 @@ package com.example.distributed_lovable_clone.account_service.controller;
 import com.example.distributed_lovable_clone.account_service.mapper.UserMapper;
 import com.example.distributed_lovable_clone.account_service.repository.UserRepository;
 import com.example.distributed_lovable_clone.account_service.service.SubscriptionService;
-import com.example.distributed_lovable_clone.commonlib.dto.PlanDto;
-import com.example.distributed_lovable_clone.commonlib.dto.UserDto;
-import com.example.distributed_lovable_clone.commonlib.errors.ResourceNotFoundException;
+import com.example.distributed_lovable_clone.common_lib.dto.PlanDto;
+import com.example.distributed_lovable_clone.common_lib.dto.UserDto;
+import com.example.distributed_lovable_clone.common_lib.errors.ResourceNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

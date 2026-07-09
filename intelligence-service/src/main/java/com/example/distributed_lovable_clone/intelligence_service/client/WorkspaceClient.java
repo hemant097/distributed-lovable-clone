@@ -1,7 +1,7 @@
 package com.example.distributed_lovable_clone.intelligence_service.client;
 
-import com.example.distributed_lovable_clone.commonlib.dto.FileTreeResponse;
-import com.example.distributed_lovable_clone.commonlib.enums.ProjectPermission;
+import com.example.distributed_lovable_clone.common_lib.dto.FileTreeResponse;
+import com.example.distributed_lovable_clone.common_lib.enums.ProjectPermission;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

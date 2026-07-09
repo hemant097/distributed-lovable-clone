@@ -1,6 +1,6 @@
 package com.example.distributed_lovable_clone.intelligence_service.entity;
 
-import com.example.distributed_lovable_clone.commonlib.enums.MessageRole;
+import com.example.distributed_lovable_clone.common_lib.enums.MessageRole;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;

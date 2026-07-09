@@ -2,7 +2,7 @@ package com.example.distributed_lovable_clone.intelligence_service.llm.tools;
 
 import com.example.distributed_lovable_clone.intelligence_service.entity.ChatEvent;
 import com.example.distributed_lovable_clone.intelligence_service.entity.ChatMessage;
-import com.example.distributed_lovable_clone.commonlib.enums.ChatEventType;
+import com.example.distributed_lovable_clone.common_lib.enums.ChatEventType;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

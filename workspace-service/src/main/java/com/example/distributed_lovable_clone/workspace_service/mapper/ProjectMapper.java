@@ -3,7 +3,7 @@ package com.example.distributed_lovable_clone.workspace_service.mapper;
 import com.example.distributed_lovable_clone.workspace_service.dto.project.ProjectResponse;
 import com.example.distributed_lovable_clone.workspace_service.dto.project.ProjectSummaryResponse;
 import com.example.distributed_lovable_clone.workspace_service.entity.Project;
-import com.example.distributed_lovable_clone.commonlib.enums.ProjectRole;
+import com.example.distributed_lovable_clone.common_lib.enums.ProjectRole;
 import org.mapstruct.Mapper;
 
 import java.util.List;

@@ -3,8 +3,8 @@ package com.example.distributed_lovable_clone.account_service.service;
 
 
 import com.example.distributed_lovable_clone.account_service.dto.subscription.SubscriptionResponse;
-import com.example.distributed_lovable_clone.commonlib.dto.PlanDto;
-import com.example.distributed_lovable_clone.commonlib.enums.SubscriptionStatus;
+import com.example.distributed_lovable_clone.common_lib.dto.PlanDto;
+import com.example.distributed_lovable_clone.common_lib.enums.SubscriptionStatus;
 
 import java.time.Instant;
 

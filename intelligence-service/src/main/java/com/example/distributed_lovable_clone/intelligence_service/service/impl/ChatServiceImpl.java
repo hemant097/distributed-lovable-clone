@@ -8,7 +8,7 @@ import com.example.distributed_lovable_clone.intelligence_service.mapper.ChatMap
 import com.example.distributed_lovable_clone.intelligence_service.repository.ChatMessageRepository;
 import com.example.distributed_lovable_clone.intelligence_service.repository.ChatSessionRepository;
 import com.example.distributed_lovable_clone.intelligence_service.service.ChatService;
-import com.example.distributed_lovable_clone.commonlib.security.AuthUtil;
+import com.example.distributed_lovable_clone.common_lib.security.AuthUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

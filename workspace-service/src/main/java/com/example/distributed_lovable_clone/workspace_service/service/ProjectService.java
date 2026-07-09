@@ -4,7 +4,7 @@ package com.example.distributed_lovable_clone.workspace_service.service;
 import com.example.distributed_lovable_clone.workspace_service.dto.project.ProjectRequest;
 import com.example.distributed_lovable_clone.workspace_service.dto.project.ProjectResponse;
 import com.example.distributed_lovable_clone.workspace_service.dto.project.ProjectSummaryResponse;
-import com.example.distributed_lovable_clone.commonlib.enums.ProjectPermission;
+import com.example.distributed_lovable_clone.common_lib.enums.ProjectPermission;
 
 import java.util.List;
 

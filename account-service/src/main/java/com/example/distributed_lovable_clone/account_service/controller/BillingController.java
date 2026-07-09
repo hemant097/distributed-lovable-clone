@@ -1,13 +1,12 @@
 package com.example.distributed_lovable_clone.account_service.controller;
 
-import com.example.distributed_lovable_clone.account_service.dto.subscription.*;
 import com.example.distributed_lovable_clone.account_service.dto.subscription.CheckoutRequest;
 import com.example.distributed_lovable_clone.account_service.dto.subscription.CheckoutResponse;
 import com.example.distributed_lovable_clone.account_service.dto.subscription.PortalResponse;
 import com.example.distributed_lovable_clone.account_service.dto.subscription.SubscriptionResponse;
 import com.example.distributed_lovable_clone.account_service.service.PaymentProcessor;
 import com.example.distributed_lovable_clone.account_service.service.SubscriptionService;
-import com.example.distributed_lovable_clone.commonlib.security.AuthUtil;
+import com.example.distributed_lovable_clone.common_lib.security.AuthUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

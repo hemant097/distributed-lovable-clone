@@ -1,6 +1,6 @@
 package com.example.distributed_lovable_clone.workspace_service.entity;
 
-import com.example.distributed_lovable_clone.commonlib.enums.PreviewStatus;
+import com.example.distributed_lovable_clone.common_lib.enums.PreviewStatus;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;

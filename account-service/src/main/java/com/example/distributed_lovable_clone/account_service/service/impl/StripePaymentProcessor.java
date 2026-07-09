@@ -9,10 +9,10 @@ import com.example.distributed_lovable_clone.account_service.repository.PlanRepo
 import com.example.distributed_lovable_clone.account_service.repository.UserRepository;
 import com.example.distributed_lovable_clone.account_service.service.PaymentProcessor;
 import com.example.distributed_lovable_clone.account_service.service.SubscriptionService;
-import com.example.distributed_lovable_clone.commonlib.enums.SubscriptionStatus;
-import com.example.distributed_lovable_clone.commonlib.errors.BadRequestException;
-import com.example.distributed_lovable_clone.commonlib.errors.ResourceNotFoundException;
-import com.example.distributed_lovable_clone.commonlib.security.AuthUtil;
+import com.example.distributed_lovable_clone.common_lib.enums.SubscriptionStatus;
+import com.example.distributed_lovable_clone.common_lib.errors.BadRequestException;
+import com.example.distributed_lovable_clone.common_lib.errors.ResourceNotFoundException;
+import com.example.distributed_lovable_clone.common_lib.security.AuthUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
