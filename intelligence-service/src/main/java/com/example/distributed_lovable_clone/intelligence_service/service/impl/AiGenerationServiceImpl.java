@@ -1,5 +1,6 @@
 package com.example.distributed_lovable_clone.intelligence_service.service.impl;
 
+import com.example.distributed_lovable_clone.common_lib.event.FileStoreRequestEvent;
 import com.example.distributed_lovable_clone.intelligence_service.client.WorkspaceClient;
 import com.example.distributed_lovable_clone.intelligence_service.dto.chat.StreamResponse;
 import com.example.distributed_lovable_clone.intelligence_service.entity.ChatEvent;
@@ -22,6 +23,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.metadata.Usage;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
@@ -48,6 +50,8 @@ public class AiGenerationServiceImpl implements AiGenerationService {
     private final LlmResponseParser llmResponseParser;
     private final UsageService usageService;
     private final WorkspaceClient workspaceClient;
+
+    private final KafkaTemplate<String,FileStoreRequestEvent> kafkaTemplate;
 
     /**Explanation:
      For using \ before " -> \" is escaped double quote. If we want real " inside string we need to put \" or for \ we need \\
@@ -160,6 +164,7 @@ public class AiGenerationServiceImpl implements AiGenerationService {
 
     private void finalizeChats(String userMessage, ChatSession chatSession, String fullText,Long duration,Usage promptUsage){
         Long projectId = chatSession.getId().getProjectId();
+        Long userId = chatSession.getId().getUserId();
 
         //saving tokens used
         if(promptUsage!=null){
@@ -200,6 +205,16 @@ public class AiGenerationServiceImpl implements AiGenerationService {
                     String filePath = fileEditEvent.getFilePath();
                     String content = fileEditEvent.getContent();
 //                    projectFileService.saveFile(projectId, filePath,content); TODO -> add Kafka
+                    FileStoreRequestEvent fileStoreRequestEvent = new FileStoreRequestEvent(
+                            projectId,
+                            "",
+                            filePath,
+                            content,
+                            userId
+                    );
+                    log.info("Storage request event sent for the path: {}",filePath);
+                    kafkaTemplate.send("file-storage-request-event","project-"+projectId,fileStoreRequestEvent);
+
                 });
 
         log.info("All events saved for {}",chatSession.getId());

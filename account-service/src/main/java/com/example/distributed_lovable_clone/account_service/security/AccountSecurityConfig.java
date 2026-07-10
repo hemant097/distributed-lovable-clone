@@ -1,6 +1,7 @@
 package com.example.distributed_lovable_clone.account_service.security;
 
 import com.example.distributed_lovable_clone.common_lib.security.JwtAuthFilter;
+import jakarta.servlet.DispatcherType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -36,6 +37,8 @@ public class AccountSecurityConfig {
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests( auth -> auth
                         .requestMatchers("/auth/**","/api/webhooks/**").permitAll()
+                        .dispatcherTypeMatchers(DispatcherType.ASYNC).permitAll()
+                        .dispatcherTypeMatchers(DispatcherType.ERROR).permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class)

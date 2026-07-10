@@ -3,6 +3,7 @@ package com.example.distributed_lovable_clone.api_gateway.filter;
 import com.example.distributed_lovable_clone.api_gateway.error.APIError;
 import com.example.distributed_lovable_clone.api_gateway.properties.SecurityProperties;
 import com.example.distributed_lovable_clone.api_gateway.service.JwtGatewayService;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
@@ -25,7 +26,10 @@ public class GatewayJwtAuthFilter implements GlobalFilter, Ordered {
     private final SecurityProperties securityProperties;
     private final JwtGatewayService jwtGatewayService;
     private final AntPathMatcher pathMatcher = new AntPathMatcher(); //using contains can produce false positives
-    private final ObjectMapper objectMapper;
+    private final ObjectMapper objectMapper = new ObjectMapper()
+//            .registerModule(new JavaTimeModule()) //no need now, as Jackson3
+            ;
+
 
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {

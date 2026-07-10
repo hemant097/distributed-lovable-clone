@@ -35,8 +35,7 @@ public class SharedSecurityAutoConfiguration {
                 log.info("Thread: {}", Thread.currentThread().getName());
                 Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
-                log.info("Authentication: {}", authentication);
-                log.info("Context: {}", SecurityContextHolder.getContext());
+                log.info("Authentication : {}", authentication);
 
                 if (requestTemplate.headers().containsKey("Authorization")) {
                     return;
