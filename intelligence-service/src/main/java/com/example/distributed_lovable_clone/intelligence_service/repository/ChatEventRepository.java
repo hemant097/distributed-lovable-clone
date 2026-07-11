@@ -4,6 +4,9 @@ import com.example.distributed_lovable_clone.intelligence_service.entity.ChatEve
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface ChatEventRepository extends JpaRepository<ChatEvent,Long> {
+    Optional<ChatEvent> findBySagaId(String sagaId);
 }

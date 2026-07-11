@@ -1,5 +1,6 @@
 package com.example.distributed_lovable_clone.intelligence_service.entity;
 
+import com.example.distributed_lovable_clone.common_lib.enums.ChatEventStatus;
 import com.example.distributed_lovable_clone.common_lib.enums.ChatEventType;
 import jakarta.persistence.*;
 import lombok.*;
@@ -38,6 +39,11 @@ public class ChatEvent {
     @Column(columnDefinition = "text")
     String metadata; //null, unless ChatEventType is TOOL_LOG
 
+    String sagaId;
+
+    @Enumerated(EnumType.STRING)
+//    @Column(nullable = false)
+    ChatEventStatus status;
 
 //owning side,
 
