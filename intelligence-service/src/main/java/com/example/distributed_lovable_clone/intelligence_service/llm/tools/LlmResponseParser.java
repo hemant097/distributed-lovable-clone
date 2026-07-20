@@ -1,5 +1,6 @@
 package com.example.distributed_lovable_clone.intelligence_service.llm.tools;
 
+import com.example.distributed_lovable_clone.common_lib.enums.ChatEventStatus;
 import com.example.distributed_lovable_clone.intelligence_service.entity.ChatEvent;
 import com.example.distributed_lovable_clone.intelligence_service.entity.ChatMessage;
 import com.example.distributed_lovable_clone.common_lib.enums.ChatEventType;
@@ -66,14 +67,16 @@ public class LlmResponseParser {
                 Map<String, String> attrMap = extractAttributes(attributes);
 
                 ChatEvent.ChatEventBuilder builder = ChatEvent.builder()
+                        .status(ChatEventStatus.CONFIRMED)
                         .chatMessage(parentMessage)
-                        .content(content) // for markdown content
+                        .content(content) // for Markdown content
                         .sequenceOrder(orderCounter++);
 
                 switch (tagName) {
                     case "message" -> builder.type(ChatEventType.MESSAGE);
                     case "file" -> {
                         builder.type(ChatEventType.FILE_EDIT);
+                        builder.status(ChatEventStatus.PENDING);
                         builder.filePath(attrMap.get("path")); // Required for files
 //                    builder.content(null);
                     }

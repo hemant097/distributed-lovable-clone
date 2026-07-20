@@ -36,7 +36,7 @@ public class AccountSecurityConfig {
                 .sessionManagement( sessionConfig -> sessionConfig
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests( auth -> auth
-                        .requestMatchers("/auth/**","/api/webhooks/**").permitAll()
+                        .requestMatchers("/auth/**","/api/webhooks/**","/actuator/**","/internal").permitAll()
                         .dispatcherTypeMatchers(DispatcherType.ASYNC).permitAll()
                         .dispatcherTypeMatchers(DispatcherType.ERROR).permitAll()
                         .anyRequest().authenticated()

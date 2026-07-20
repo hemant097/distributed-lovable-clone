@@ -1,5 +1,6 @@
 package com.example.distributed_lovable_clone.intelligence_service.service.impl;
 
+import com.example.distributed_lovable_clone.common_lib.enums.ChatEventStatus;
 import com.example.distributed_lovable_clone.common_lib.event.FileStoreRequestEvent;
 import com.example.distributed_lovable_clone.intelligence_service.client.WorkspaceClient;
 import com.example.distributed_lovable_clone.intelligence_service.dto.chat.StreamResponse;
@@ -32,6 +33,7 @@ import reactor.core.scheduler.Schedulers;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.UUID;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -194,6 +196,7 @@ public class AiGenerationServiceImpl implements AiGenerationService {
         List<ChatEvent> chatEventList = llmResponseParser.parseChatEvents(fullText, assistantChatMessage);
         chatEventList.addFirst(ChatEvent.builder()
                         .type(ChatEventType.THOUGHT)
+                        .status(ChatEventStatus.CONFIRMED)
                         .chatMessage(assistantChatMessage)
                         .content("Thought for "+duration+"s")
                         .sequenceOrder(0)
@@ -204,13 +207,10 @@ public class AiGenerationServiceImpl implements AiGenerationService {
                 .forEach( fileEditEvent ->{
                     String filePath = fileEditEvent.getFilePath();
                     String content = fileEditEvent.getContent();
+                    String sagaId = UUID.randomUUID() .toString();
 //                    projectFileService.saveFile(projectId, filePath,content); TODO -> add Kafka
                     FileStoreRequestEvent fileStoreRequestEvent = new FileStoreRequestEvent(
-                            projectId,
-                            "",
-                            filePath,
-                            content,
-                            userId
+                            projectId, sagaId, filePath, content, userId
                     );
                     log.info("Storage request event sent for the path: {}",filePath);
                     kafkaTemplate.send("file-storage-request-event","project-"+projectId,fileStoreRequestEvent);

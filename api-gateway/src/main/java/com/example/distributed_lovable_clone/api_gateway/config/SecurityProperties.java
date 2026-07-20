@@ -1,4 +1,4 @@
-package com.example.distributed_lovable_clone.api_gateway.properties;
+package com.example.distributed_lovable_clone.api_gateway.config;
 
 import lombok.Getter;
 import lombok.Setter;

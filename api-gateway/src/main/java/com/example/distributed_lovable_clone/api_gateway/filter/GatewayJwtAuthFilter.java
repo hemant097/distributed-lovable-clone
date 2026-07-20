@@ -1,9 +1,8 @@
 package com.example.distributed_lovable_clone.api_gateway.filter;
 
 import com.example.distributed_lovable_clone.api_gateway.error.APIError;
-import com.example.distributed_lovable_clone.api_gateway.properties.SecurityProperties;
+import com.example.distributed_lovable_clone.api_gateway.config.SecurityProperties;
 import com.example.distributed_lovable_clone.api_gateway.service.JwtGatewayService;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;

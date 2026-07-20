@@ -74,9 +74,9 @@ public class ProjectFileServiceImpl implements ProjectFileService {
         String objectKey = "project-"+projectId +"/"+cleanPath;
 
         //returns the index of last / OR \ from the cleanPath, if not found,returns -1
-        //if index=-1, entire cleanPath is fileName, like in case of cleanPath = "something.txt", fileName = cleanPath
-        int index = Math.max(cleanPath.lastIndexOf('/'), filePath.lastIndexOf('\\'));
-        String fileName = filePath.substring(index + 1);
+        //if index=-1, entire cleanPath is fileName, like in case of cleanPath = "..../folder_name/something.txt", fileName = something.txt
+        int index = Math.max(cleanPath.lastIndexOf('/'), cleanPath.lastIndexOf('\\'));
+        String fileName = cleanPath.substring(index + 1);
 
         log.info("Trying to save file:{}, in projectId:{}",fileName,projectId);
 
@@ -106,7 +106,7 @@ public class ProjectFileServiceImpl implements ProjectFileService {
 
             log.info("saved file in minio projects bucket with object_key: {}",objectKey);
         } catch (Exception e){
-            log.error("Failed to save file {}/{}",projectId,cleanPath,e);
+            log.error("Failed to save file project-{}/{} due to : {}",projectId,cleanPath,e.getClass());
             throw new RuntimeException("file save failed",e);
         }
 
